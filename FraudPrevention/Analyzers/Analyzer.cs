@@ -8,12 +8,12 @@ using Utils.Extensions;
 
 namespace FraudPrevention.Analyzers
 {
-    public class FileAnalyzer : IAnalyzer
+    public class Analyzer : IAnalyzer
     {
         private IReader reader;
         private ITransformer transformer;
 
-        public FileAnalyzer(IReader reader, ITransformer transformer)
+        public Analyzer(IReader reader, ITransformer transformer)
         {
             this.reader = reader;
             this.transformer = transformer;

@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Analyzers\AnalysisResult.cs" />
-    <Compile Include="Analyzers\FileAnalyzer.cs" />
+    <Compile Include="Analyzers\Analyzer.cs" />
     <Compile Include="Analyzers\IAnalyzer.cs" />
     <Compile Include="Analyzers\Record.cs" />
+    <Compile Include="Dumpers\ConsoleDumper.cs" />
     <Compile Include="Dumpers\FileDumper.cs" />
     <Compile Include="Dumpers\IDumper.cs" />
     <Compile Include="Extensions\ExceptionExtensions.cs" />
+    <Compile Include="Readers\ConsoleReader.cs" />
     <Compile Include="Readers\FileReader.cs" />
     <Compile Include="Readers\IReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
