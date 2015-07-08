@@ -25,21 +25,21 @@ namespace FraudPrevention.Analyzers
             try
             {
                 string[] recordLines = reader.ReadInput();
-                IEnumerable<Record> records = transformer.Transform(recordLines);
-
-                bool[] checkedRecords = new bool[records.Count()];
+                List<Record> records = transformer.Transform(recordLines).ToList();
+                
+                bool[] checkedRecords = new bool[records.Count];
                 int duplicated = 0;
                 bool firstDuplicated = true;
                 Record currentRecord;
                 Record comparedRecord;
-                for (int i = 0; i < records.Count(); i++)
+                for (int i = 0; i < records.Count; i++)
                 {
                     if (!checkedRecords[i])
                     {
                         currentRecord = records.ElementAt(i);
 
                         firstDuplicated = true;
-                        for (int j = i + 1; j < records.Count(); j++)
+                        for (int j = i + 1; j < records.Count; j++)
                         {
                             if (!checkedRecords[j])
                             {

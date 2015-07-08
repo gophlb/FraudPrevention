@@ -20,7 +20,7 @@ namespace FraudPrevention.Readers
                 string inputLine;
                 int numberOfLines = 0;
                 bool firstLine = true;
-                ICollection<string> inputLines = new List<string>();
+                List<string> inputLines = new List<string>();
                 while (!String.IsNullOrEmpty(inputLine = Console.ReadLine()))
                 {
                     if (firstLine) 
@@ -34,7 +34,7 @@ namespace FraudPrevention.Readers
                     }
                 }
 
-                if(numberOfLines != inputLines.Count())
+                if(numberOfLines != inputLines.Count)
                 {
                     throw new Exception("Number of lines specified and introduced not equal.");
                 }

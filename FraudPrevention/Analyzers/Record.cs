@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace FraudPrevention.Analyzers
 {
-    public class Record
+    public class Record : IEquatable<Record>
     {
         public int OrderId { get; set; }
         public int DealId { get; set; }
@@ -17,22 +14,20 @@ namespace FraudPrevention.Analyzers
         public string CreditCardNumber { get; set; }
 
 
-        public bool Equals(object anotherRecord)
-        {
-            Record aux = anotherRecord as Record;
-            
+        public bool Equals(Record anotherRecord)
+        {            
             return
-                (this.Email == aux.Email && this.DealId == aux.DealId)
+                (this.Email == this.Email && this.DealId == this.DealId)
                 ||
                 (
                     (
-                        this.StreetAddress == aux.StreetAddress
-                        || this.City == aux.City
-                        || this.State == aux.State
-                        || this.ZipCode == aux.ZipCode
+                        this.StreetAddress == this.StreetAddress
+                        || this.City == this.City
+                        || this.State == this.State
+                        || this.ZipCode == this.ZipCode
                     )
-                    && this.DealId == aux.DealId
-                    && this.CreditCardNumber != aux.CreditCardNumber
+                    && this.DealId == this.DealId
+                    && this.CreditCardNumber != this.CreditCardNumber
                 )
                 ;
         }
